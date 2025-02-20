@@ -10,6 +10,10 @@ from dagster import AssetExecutionContext, MaterializeResult, MetadataValue, ass
 
 import pyodbc
 
+@asset
+def my_asset() -> int:
+    return 5
+
 
 @asset(group_name="hackernews", compute_kind="HackerNews API")
 def topstory_ids() -> None:
