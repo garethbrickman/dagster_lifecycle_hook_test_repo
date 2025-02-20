@@ -8,6 +8,8 @@ import pandas as pd
 import requests
 from dagster import AssetExecutionContext, MaterializeResult, MetadataValue, asset
 
+import pyodbc
+
 
 @asset(group_name="hackernews", compute_kind="HackerNews API")
 def topstory_ids() -> None:
